@@ -43,32 +43,29 @@ window.addEventListener("resize", function () {
 
 //Whoa text
 const myText = new SplitType("#js-whoa-text");
-tl_init.to('#js-whoa-text .char', {
+tl_init
+.from(".galaxy .nebula", {
+    duration: .5, 
+    opacity: 0,
+    stagger: 0.3,
+},"<")
+.to('#js-whoa-text .char', {
     y: 0,
     stagger: 0.05,
     duration: .03
-},"<")
+})
     .from('.js-item-init-up', { opacity: 0, scale: 0.5, stagger: 0.1 })
     .from('.js-image-pop-init', { opacity: 0, scale: 2, stagger: 0.05 })
 tl_init.play()
 
 //Animation for sections
 
+
+
 sections.forEach((stop, index)=>{
     tl
-        .from(stop.querySelector('.m-content'), {
-            yPercent: -50,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: stop.querySelector('.m-content'),
-                start: "left center",
-                end: "center center",
-                containerAnimation: tl,
-                scrub: true,
-            }
-        })
         //Animation for images scrooll
-        gsap.to(".m-scroll-image", {
+        .to(".m-scroll-image", {
             duration: .3,
             y: getScrollImages,
             stagger: 0.01,
@@ -79,17 +76,17 @@ sections.forEach((stop, index)=>{
                 end: "center left",
                 containerAnimation: tl,
                 scrub: true,
-                markers: true,
+                //markers: true,
             }
         })
         //Animation for item list of nav
-        gsap.to(".l-nav", {
+        .to(".l-nav", {
             duration: .3,
             backgroundColor: "transparent", 
             ease: "power2.inOut",
             scrollTrigger: {
                 id: 'nav',
-                trigger: ".l-section-white",
+                trigger: ".l-section--white",
                 start: "left right",
                 end: "center left",
                 containerAnimation: tl,
@@ -97,13 +94,13 @@ sections.forEach((stop, index)=>{
             }
         })
 
-        gsap.to('.m-logo', {
+        .to('.m-logo', {
             duration: 3,                  
             backgroundImage: "url('assets/images/png/logo-azul.png')" ,
             ease: "power2",
             scrollTrigger: {
                 id: 'logo',
-                trigger: ".l-section-white",
+                trigger: ".l-section--white",
                 start: "left right",
                 end: "center left",
                 containerAnimation: tl,
@@ -117,7 +114,7 @@ sections.forEach((stop, index)=>{
                   backgroundImage: "url('assets/images/png/logo-Add-Astra.png')" ,
                   ease: "power2.inOut",  // Tipo de facilidad (easing) para la animación de retorno,
                   scrollTrigger: {
-                    trigger: ".l-section-black",
+                    trigger: ".l-section--black",
                     start: "left right",
                     end: "right right",
                     containerAnimation: tl,
@@ -128,12 +125,12 @@ sections.forEach((stop, index)=>{
               }
         })
 
-        gsap.to(".l-nav .m-list-item a" , {
+        .to(".l-nav .m-list-item a" , {
             duration: .2,
             color: "#131c46", 
             ease: "power2.inOut",
             scrollTrigger: {
-                trigger: ".l-section-white",
+                trigger: ".l-section--white",
                 start: "left right",
                 end: "right right",
                 containerAnimation: tl,
@@ -147,7 +144,7 @@ sections.forEach((stop, index)=>{
                   color: "#fff", // Color original del texto
                   ease: "power2.inOut",  // Tipo de facilidad (easing) para la animación de retorno,
                   scrollTrigger: {
-                    trigger: ".l-section-black",
+                    trigger: ".l-section--black",
                     start: "left right",
                     end: "right right",
                     containerAnimation: tl,
@@ -157,25 +154,40 @@ sections.forEach((stop, index)=>{
               }
         })
 
-        const sections = document.querySelectorAll('.js-whoa-text-scroll');
-        sections.forEach(section=>{
-            const myText = new SplitType(section);
-            const charsInSection = section.querySelectorAll('.char');
-            gsap.to(charsInSection, {
-                y: 0,
-                stagger: 0.05,
-                delay: 0.2,
-                duration: .03,
-                ease: "power2.inOut",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "center right",
-                    end: "center center",
-                    containerAnimation: tl,
-                    scrub: 0.3,
-                   // markers: true,
-                }
-            })
+        .fromTo(".js-animation-top", {
+            y: 10, 
+            opacity: 0,
+        },
+        {
+            duration: 1,
+            y: '-1em',
+            opacity: 1,
+            stagger: 1,
+            scrollTrigger: {
+                trigger: ".js-content-top",
+                start: "left right",
+                end: "right right",
+                containerAnimation: tl,
+                scrub: .1,
+            },
+        })
+
+        .fromTo(".js-animation-bottom", {
+            y: -10, 
+            opacity: 0,
+        },
+        {
+            duration: 1,
+            y: '1em',
+            opacity: 1,
+            stagger: 1,
+            scrollTrigger: {
+                trigger: ".js-content-bottom",
+                start: "left right",
+                end: "right right",
+                containerAnimation: tl,
+                scrub: .1,
+            },
         })
 
         const whoaTextScroll = document.querySelectorAll('.js-whoa-text-scroll');
@@ -193,10 +205,39 @@ sections.forEach((stop, index)=>{
                     start: "center right",
                     end: "center center",
                     containerAnimation: tl,
-                    scrub: 0.3,
+                    scrub: true,
+                    //toggleActions: 'play none none reverse',
                     //markers: true,
                 }
             })
+        })
+
+
+        const scrollTriggerBg = ScrollTrigger.create({
+            trigger: "#js-trigger-pin",
+                start: "left+=200 right",
+                end: "center left",
+                containerAnimation: tl,
+                scrub: true,
+                //toggleActions: 'play none none reverse',
+                markers: true,
+        })
+
+        gsap.fromTo(".l-section__scroll-bg", {
+            clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"
+        }, 
+        {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            scrollTrigger: {
+                ...scrollTriggerBg.vars,
+            }
+        })
+
+        gsap.to(".m-card-service", { 
+            backgroundColor: "#dcdcdc",
+            scrollTrigger: {
+                ...scrollTriggerBg.vars,
+            }
         })
 } )
 
