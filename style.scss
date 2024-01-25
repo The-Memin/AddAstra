@@ -6,7 +6,8 @@ $color-subtitle-1: #fff;
 $color-title-blue: #063254;
 $turquesa: #27c1c1;
 $btn-color-green: #27c1c1;
-$btn-color-green-hover: #166c6c;
+$btn-color-green-hover: #1ddbdb;
+//$btn-color-green-hover: #166c6c;
 $span-color-purple: #4c007d;
 $span-color-green: #64c27b;
 $font-size-btns: 1em;
@@ -131,16 +132,9 @@ a {
 }
 
 .l-slider{
+    position: relative;
     display: flex;
     width: fit-content;
-    section{
-        height: 100vh;
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        //border: 1px solid;
-        padding: 0 4em;
-    }
 }
 
 .l-header{
@@ -180,10 +174,24 @@ a {
 
 
 .l-section{
-    display: flex;
     position: relative;
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    
+    &--p4{
+        padding: 0 4em;
+    }
+
+    &--pl4{
+        padding-left: 4em;
+    }
+
     &__scroll-bg{
         position: absolute;
+        right: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         background-color: white;
@@ -192,6 +200,9 @@ a {
 
 //Modules
 
+.pl-10{
+    padding-left: 10em;
+}
 
 .m-content-white{
     position: relative;
@@ -199,13 +210,17 @@ a {
     align-items: center;
     height: 100%;
     min-width: 80vw;
-    margin-left: 5%;
     z-index: -1;
+    &--ml5{
+        margin-left: 5%;
+    }
+
     &__content{
         position: relative;
         background-color: #fff;
         display: flex;
         align-items: center;
+
         &--rotate{
             height: 300%;
             transform: rotate(-26deg);
@@ -319,15 +334,17 @@ a {
         color: white !important;
         &:hover{
             background-color: $btn-color-green-hover;
+            box-shadow: 1px 1px 20px $btn-color-green-hover;
         }
     }
 
     &--transparent{
         background-color: transparent;
-        border: 2px solid transparent;
+        border: 1px solid transparent;
         color: white;
         &:hover{
-            border: 2px solid white;
+            border: 1px solid white;
+            box-shadow: 1px 1px 14px white;
             border-radius: 7px;
             color: rgb(243, 243, 243);
         }
@@ -404,6 +421,20 @@ a {
             line-height: 1.5;
             font-size: 1.05em;
         }
+    }
+}
+
+.m-vertical-labels{
+    border: 1px solid black;
+    display: flex;
+    gap: 1em;
+    color: $color-title-blue;
+    font-style: italic;
+    transform: rotate(-90deg);
+    position: relative;
+    left: -10em;
+    &__title{
+        font-weight: 400;
     }
 }
 
@@ -499,3 +530,45 @@ a {
       }
     }
   }
+
+
+
+// Styles for preloader
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Fondo del preloader */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegúrate de que esté encima de todo el contenido */
+}
+
+#preloader-inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+#preloader-logo {
+    /* Estilos para tu logo, si lo tienes */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    img{
+        height: 9em;
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+#content {
+    opacity: 0; /* El contenido estará oculto hasta que el preloader se desvanezca */
+}

@@ -107,17 +107,10 @@ a {
 }
 
 .l-slider {
+  position: relative;
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
-}
-.l-slider section {
-  height: 100vh;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  padding: 0 4em;
 }
 
 .l-header {
@@ -155,14 +148,30 @@ a {
 }
 
 .l-section {
-  display: flex;
   position: relative;
+  height: 100vh;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.l-section--p4 {
+  padding: 0 4em;
+}
+.l-section--pl4 {
+  padding-left: 4em;
 }
 .l-section__scroll-bg {
   position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: white;
+}
+
+.pl-10 {
+  padding-left: 10em;
 }
 
 .m-content-white {
@@ -171,8 +180,10 @@ a {
   align-items: center;
   height: 100%;
   min-width: 80vw;
-  margin-left: 5%;
   z-index: -1;
+}
+.m-content-white--ml5 {
+  margin-left: 5%;
 }
 .m-content-white__content {
   position: relative;
@@ -285,15 +296,17 @@ a {
   color: white !important;
 }
 .m-btn--green:hover {
-  background-color: #166c6c;
+  background-color: #1ddbdb;
+  box-shadow: 1px 1px 20px #1ddbdb;
 }
 .m-btn--transparent {
   background-color: transparent;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   color: white;
 }
 .m-btn--transparent:hover {
-  border: 2px solid white;
+  border: 1px solid white;
+  box-shadow: 1px 1px 14px white;
   border-radius: 7px;
   color: rgb(243, 243, 243);
 }
@@ -363,6 +376,20 @@ a {
   text-align: justify;
   line-height: 1.5;
   font-size: 1.05em;
+}
+
+.m-vertical-labels {
+  border: 1px solid black;
+  display: flex;
+  gap: 1em;
+  color: #063254;
+  font-style: italic;
+  transform: rotate(-90deg);
+  position: relative;
+  left: -10em;
+}
+.m-vertical-labels__title {
+  font-weight: 400;
 }
 
 .line {
@@ -442,4 +469,43 @@ a {
   100% {
     transform: translate(300px, 300px) rotate(45deg);
   }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Fondo del preloader */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Asegúrate de que esté encima de todo el contenido */
+}
+
+#preloader-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+#preloader-logo {
+  /* Estilos para tu logo, si lo tienes */
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+#preloader-logo img {
+  height: 9em;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#content {
+  opacity: 0; /* El contenido estará oculto hasta que el preloader se desvanezca */
 }/*# sourceMappingURL=style.css.map */

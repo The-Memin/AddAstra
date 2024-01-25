@@ -40,7 +40,6 @@ window.addEventListener("resize", function () {
 });
 
 //Animation for init
-
 //Whoa text
 const myText = new SplitType("#js-whoa-text");
 tl_init
@@ -214,7 +213,7 @@ sections.forEach((stop, index)=>{
 
 
         const scrollTriggerBg = ScrollTrigger.create({
-            trigger: "#js-trigger-pin",
+            trigger: "#js-trigger-bg",
                 start: "left+=200 right",
                 end: "center left",
                 containerAnimation: tl,
@@ -241,9 +240,6 @@ sections.forEach((stop, index)=>{
         })
 } )
 
-
-
-
 //smooth scroll
 const lenis = new Lenis()
 
@@ -253,3 +249,14 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
+
+// Preloader
+document.addEventListener("DOMContentLoaded", function () {
+    // Ocultar el preloader una vez que la página esté completamente cargada
+    gsap.to("#preloader", { opacity: 0,zIndex: -100, duration: 1, onComplete: showContent });
+});
+
+function showContent() {
+    // Mostrar el contenido de la página una vez que el preloader se haya desvanecido
+    gsap.to("#content", { opacity: 1, duration: 0.3 });
+}

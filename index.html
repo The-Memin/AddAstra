@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" m-content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/preloader.css">
     <title>Add Astra</title>
 </head>
 <body>
+
     <div id="background-page">
         <div class="galaxy">
             <div class="nebula">
@@ -130,166 +132,214 @@
         </div>
     </div>
 
-    <header class="l-header">
-
-        <nav class="l-nav">
-            <div class="m-logo" style="background-image: url('assets/images/png/logo-Add-Astra.png');"></div>
-
-            <ul class="l-nav__list">
-                <li class="m-list-item"><a href="#">Conócenos</a></li>
-                <li class="m-list-item"><a href="#">Servicios</a></li>
-                <li class="m-list-item"><a href="#">Casos de éxito</a></li>
-                <li class="m-list-item"><a href="#">Contáctanos</a></li>
-                <li class="m-list-item"><a href="#">Más</a></li>
-                <li class="m-list-item"><a href="#" class="m-btn m-btn--green">Cotiza tu proyecto</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <main class="l-sectionWrapper">
-        <div class="l-slider">
-            <section class="l-section">
-                <div class="l-flex-column l-flex-column--gap-3">
-                    <div class="l-flex-column l-vw-55" id="js-whoa-text">
-                        <h2 class="m-subtitle">
-                            ¡Bienvenido a ADD ASTRA!
-                        </h2>
-                        <h1 class="m-title">
-                            La mejor agencia del prro universo
-                        </h1>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="preloader-inner">
+            <div id="preloader-logo"><img src="./assets/images/png/logo-Add-Astra.png" alt=""></div>
+            <div id='universe'>
+                <div id='galaxy'>
+                  <div class='circle'></div>
+                  <div class='circle2'></div>
+                  <div class='circle3'></div>
+                  <div id='orbit0'>
+                    <div id='pos0'>
+                      <div id='dot0'></div>
                     </div>
-
-                    <div class="l-flex-row l-flex-row--left l-flex-row--g3">
-                        <button class="m-btn m-btn--green js-item-init-up">Ver casos de exito</button>
-                        <button  class="m-btn m-btn--transparent js-item-init-up">
-                            <span>Saber más</span>
-                            <svg class="m-btn__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
-                        </button>
+                  </div>
+                  <div id='orbit1'>
+                    <div id='pos1'>
+                      <div id='dot1'></div>
                     </div>
+                  </div>
+                  <div id='orbit2'>
+                    <div id='pos2'>
+                      <div id='dot2'></div>
+                    </div>
+                  </div>
+                  <div id='orbit3'>
+                    <div id='pos3'>
+                      <div id='dot3'></div>
+                    </div>
+                  </div>
                 </div>
-            </section>
-            <section class="l-section">
-                <div class="l-vertical-slider js-vertical-slider">
-                    <div class="l-vertical-slider__column l-vertical-slider__column--1 js-vertical-column">
-                        <img src="assets/images/jpg/designer.jpg" alt="" class="m-scroll-image m-scroll-image--blue js-image-pop-init">
-                        <img src="assets/images/jpg/computer.jpg" alt="" class="m-scroll-image m-scroll-image--yellow js-image-pop-init">
-                    </div>
-                    <div class="l-vertical-slider__column l-vertical-slider__column--2 js-vertical-column">
-                        <img src="assets/images/jpg/programer.jpg" alt="" class="m-scroll-image m-scroll-image--green js-image-pop-init">
-                        <img src="assets/images/jpg/photographer.jpg" alt="" class="m-scroll-image m-scroll-image--mag js-image-pop-init">
-                        <img src="assets/images/jpg/marketing.jpg" alt="" class="m-scroll-image m-scroll-image--purple js-image-pop-init">
-                    </div>
-                </div>
-            </section>
-            <section class="l-section l-section--white">
-                <div class="m-content-white">
-                    <div class="m-content-white__content m-content-white__content--rotate">
-                        <h1 class="m-title m-title--right m-title--blue m-title--m js-whoa-text-scroll">
-                            Tus proyectos siempre en las
-                            <span class="m-title__span m-title__span--purple">
-                                mejores manos 
-                            </span>
-                        </h1>
-                    </div>
-                    <div class="m-content-white__content m-content-white__content--icons">
-
-                    </div>
-                </div>
-            </section>
-            <section class="l-section l-section--black">
-                <div class="l-flex-row l-flex-row--vw60">
-                    <img class="m-img-full" src="assets/images/png/persona.png" alt="">
-                    <h1 class="m-title m-title--m m-title--right js-whoa-text-scroll">
-                        Llevamos tu empresa al siguiente nivel con <span class="m-title__span m-title__span--green">nuestros servicios</span>
-                    </h1>
-                </div>
-            </section>
-            <section class="l-section" >
-
-                <div class="l-section__scroll-bg"></div>
-
-                <div class="l-flex-row l-flex-row--services l-flex-row--g3 js-content-top js-content-bottom" id="js-section-pin">
-                    <div class="m-card-service m-card-service--blue m-card-service--top js-animation-top">
-                        <div class="m-card-service__content">
-                            <h1 class="m-card-service__content__title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p class="m-card-service__content__p">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
-                            </p>
-                        </div>
-                        <button class="m-btn m-btn--green">
-                            Ver más
-                        </button>
-                    </div>
-
-                    <div class="m-card-service m-card-service--yellow m-card-service--bottom js-animation-bottom">
-                        <div class="m-card-service__content">
-                            <h1 class="m-card-service__content__title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p class="m-card-service__content__p">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
-                            </p>
-                        </div>
-                        <button class="m-btn m-btn--green">
-                            Ver más
-                        </button>
-                    </div>
-
-                    <div class="m-card-service m-card-service--magenta m-card-service--top js-animation-top">
-                        <div class="m-card-service__content">
-                            <h1 class="m-card-service__content__title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p class="m-card-service__content__p">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
-                            </p>
-                        </div>
-                        <button class="m-btn m-btn--green">
-                            Ver más
-                        </button>
-                    </div>
-
-                    <div class="m-card-service m-card-service--purple m-card-service--bottom js-animation-bottom">
-                        <div class="m-card-service__content">
-                            <h1 class="m-card-service__content__title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p class="m-card-service__content__p">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
-                            </p>
-                        </div>
-                        <button class="m-btn m-btn--green">
-                            Ver más
-                        </button>
-                    </div>
-
-                    <div class="m-card-service m-card-service--orange m-card-service--top js-animation-top">
-                        <div class="m-card-service__content">
-                            <h1 class="m-card-service__content__title">
-                                Lorem ipsum dolor sit.
-                            </h1>
-                            <p class="m-card-service__content__p">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet 
-                            </p>
-                        </div>
-                        <button class="m-btn m-btn--green">
-                            Ver más
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="l-section l-section--white" id="js-trigger-pin">
-                <div class="m-content-white">
-                   <div id="logos-container"></div>
-                </div>
-            </section>
-
+            </div>
         </div>
-    </main>
+    </div>
+
+    <div id="content">
+        <header class="l-header">
+    
+            <nav class="l-nav">
+                <div class="m-logo" style="background-image: url('assets/images/png/logo-Add-Astra.png');"></div>
+    
+                <ul class="l-nav__list">
+                    <li class="m-list-item"><a href="#">Conócenos</a></li>
+                    <li class="m-list-item"><a href="#">Servicios</a></li>
+                    <li class="m-list-item"><a href="#">Casos de éxito</a></li>
+                    <li class="m-list-item"><a href="#">Contáctanos</a></li>
+                    <li class="m-list-item"><a href="#">Más</a></li>
+                    <li class="m-list-item"><a href="#" class="m-btn m-btn--green">Cotiza tu proyecto</a></li>
+                </ul>
+            </nav>
+    
+        </header>
+    
+    
+        <main class="l-sectionWrapper">
+            <div class="l-slider">
+                <section class="l-section l-section--p4">
+                    <div class="l-flex-column l-flex-column--gap-3">
+                        <div class="l-flex-column l-vw-55" id="js-whoa-text">
+                            <h2 class="m-subtitle">
+                                ¡Bienvenido a ADD ASTRA!
+                            </h2>
+                            <h1 class="m-title">
+                                La mejor agencia del prro universo
+                            </h1>
+                        </div>
+    
+                        <div class="l-flex-row l-flex-row--left l-flex-row--g3">
+                            <button class="m-btn m-btn--green js-item-init-up">Ver casos de exito</button>
+                            <button  class="m-btn m-btn--transparent js-item-init-up">
+                                <span>Saber más</span>
+                                <svg class="m-btn__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <section class="l-section l-section--p4">
+                    <div class="l-vertical-slider js-vertical-slider">
+                        <div class="l-vertical-slider__column l-vertical-slider__column--1 js-vertical-column">
+                            <img src="assets/images/jpg/designer.jpg" alt="" class="m-scroll-image m-scroll-image--blue js-image-pop-init">
+                            <img src="assets/images/jpg/computer.jpg" alt="" class="m-scroll-image m-scroll-image--yellow js-image-pop-init">
+                        </div>
+                        <div class="l-vertical-slider__column l-vertical-slider__column--2 js-vertical-column">
+                            <img src="assets/images/jpg/programer.jpg" alt="" class="m-scroll-image m-scroll-image--green js-image-pop-init">
+                            <img src="assets/images/jpg/photographer.jpg" alt="" class="m-scroll-image m-scroll-image--mag js-image-pop-init">
+                            <img src="assets/images/jpg/marketing.jpg" alt="" class="m-scroll-image m-scroll-image--purple js-image-pop-init">
+                        </div>
+                    </div>
+                </section>
+                <section class="l-section l-section--p4 l-section--white">
+                    <div class="m-content-white m-content-white--ml5">
+                        <div class="m-content-white__content m-content-white__content--rotate">
+                            <h1 class="m-title m-title--right m-title--blue m-title--m js-whoa-text-scroll">
+                                Tus proyectos siempre en las
+                                <span class="m-title__span m-title__span--purple">
+                                    mejores manos 
+                                </span>
+                            </h1>
+                        </div>
+                        <div class="m-content-white__content m-content-white__content--icons">
+    
+                        </div>
+                    </div>
+                </section>
+                <section class="l-section l-section--p4 l-section--black">
+                    <div class="l-flex-row l-flex-row--vw60">
+                        <img class="m-img-full" src="assets/images/png/persona.png" alt="">
+                        <h1 class="m-title m-title--m m-title--right js-whoa-text-scroll">
+                            Llevamos tu empresa al siguiente nivel con <span class="m-title__span m-title__span--green">nuestros servicios</span>
+                        </h1>
+                    </div>
+                </section>
+                <section class="l-section l-section--pl4" >
+    
+                    <div class="l-section__scroll-bg"></div>
+    
+                    <div class="l-flex-row l-flex-row--services l-flex-row--g3 js-content-top js-content-bottom" id="js-section-pin">
+                        <div class="m-card-service m-card-service--blue m-card-service--top js-animation-top">
+                            <div class="m-card-service__content">
+                                <h1 class="m-card-service__content__title">
+                                    Lorem ipsum dolor sit.
+                                </h1>
+                                <p class="m-card-service__content__p">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
+                                </p>
+                            </div>
+                            <button class="m-btn m-btn--green">
+                                Ver más
+                            </button>
+                        </div>
+    
+                        <div class="m-card-service m-card-service--yellow m-card-service--bottom js-animation-bottom">
+                            <div class="m-card-service__content">
+                                <h1 class="m-card-service__content__title">
+                                    Lorem ipsum dolor sit.
+                                </h1>
+                                <p class="m-card-service__content__p">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
+                                </p>
+                            </div>
+                            <button class="m-btn m-btn--green">
+                                Ver más
+                            </button>
+                        </div>
+    
+                        <div class="m-card-service m-card-service--magenta m-card-service--top js-animation-top">
+                            <div class="m-card-service__content">
+                                <h1 class="m-card-service__content__title">
+                                    Lorem ipsum dolor sit.
+                                </h1>
+                                <p class="m-card-service__content__p">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
+                                </p>
+                            </div>
+                            <button class="m-btn m-btn--green">
+                                Ver más
+                            </button>
+                        </div>
+    
+                        <div class="m-card-service m-card-service--purple m-card-service--bottom js-animation-bottom">
+                            <div class="m-card-service__content">
+                                <h1 class="m-card-service__content__title">
+                                    Lorem ipsum dolor sit.
+                                </h1>
+                                <p class="m-card-service__content__p">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet laudantium unde at iusto similique libero praesentium atque vero, ab illum eaque?
+                                </p>
+                            </div>
+                            <button class="m-btn m-btn--green">
+                                Ver más
+                            </button>
+                        </div>
+    
+                        <div class="m-card-service m-card-service--orange m-card-service--top js-animation-top">
+                            <div class="m-card-service__content">
+                                <h1 class="m-card-service__content__title">
+                                    Lorem ipsum dolor sit.
+                                </h1>
+                                <p class="m-card-service__content__p">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni tenetur pariatur amet 
+                                </p>
+                            </div>
+                            <button class="m-btn m-btn--green">
+                                Ver más
+                            </button>
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="l-section l-section--white" id="js-trigger-bg">
+                    <div class="m-content-white">
+                        <div class="m-content-white__content pl-10" style="width: 100vw; height: 100vh;">
+                            
+                            <div class="m-vertical-labels">
+                                <h1 class="m-vertical-labels__title">ACERCA DE NOSOTROS</h1>
+                                -
+                                <h1 class="m-vertical-labels__title">ACERCA DE NOSOTROS</h1>
+                                -
+                                <h1 class="m-vertical-labels__title">ACERCA DE NOSOTROS</h1>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+    
+            </div>
+        </main>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
