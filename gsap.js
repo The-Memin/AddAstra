@@ -58,40 +58,26 @@ tl_init
 tl_init.play()
 
 //Animation for sections
-
+tl_cell = gsap.timeline()
 
 
 sections.forEach((stop, index)=>{
     tl
-        //Animation for images scrooll
-        .to(".m-scroll-image", {
-            duration: .3,
-            y: getScrollImages,
-            stagger: 0.01,
-            scrollTrigger: {
-                id: 'vertical-scroll',
-                trigger: ".js-vertical-slider",
-                start: "center right-=200",
-                end: "center left",
-                containerAnimation: tl,
-                scrub: true,
-                //markers: true,
-            }
-        })
         //Animation for item list of nav
-        .to(".l-nav", {
-            duration: .3,
-            backgroundColor: "transparent", 
-            ease: "power2.inOut",
-            scrollTrigger: {
-                id: 'nav',
-                trigger: ".l-section--white",
-                start: "left right",
-                end: "center left",
-                containerAnimation: tl,
-                scrub: true,
-            }
-        })
+        // .to(".l-nav", {
+        //     duration: .3,
+        //     background: "rgba(255, 255, 255, 0.083)",
+        //     //filter: "blur(5px)", 
+        //     ease: "power2.inOut",
+        //     scrollTrigger: {
+        //         id: 'nav',
+        //         trigger: ".l-section--white",
+        //         start: "left right",
+        //         end: "center left",
+        //         containerAnimation: tl,
+        //         scrub: true,
+        //     }
+        // })
 
         .to('.m-logo', {
             duration: 3,                  
@@ -189,6 +175,141 @@ sections.forEach((stop, index)=>{
             },
         })
 
+        //Animation for images scrooll
+        const verticalContainers = document.querySelectorAll('.js-vertical-slider');
+
+        verticalContainers.forEach(verticalContainer => {
+            const verticalItem = verticalContainer.querySelectorAll(".js-vertical-item");
+            gsap.to(verticalItem, {
+                duration: .3,
+                y: getScrollImages,
+                stagger: 0.01,
+                scrollTrigger: {
+                    id: 'vertical-scroll',
+                    trigger: verticalContainer,
+                    start: "center right-=200",
+                    end: "center left",
+                    containerAnimation: tl,
+                    scrub: true,
+                    //markers: true,
+                }
+            })
+        })
+
+        //Animation for images scrooll
+        const verticalTitles = document.querySelectorAll('.js-vertical-title');
+
+        verticalTitles.forEach(verticalTitle => {
+            const verticalItem = verticalTitle.querySelectorAll(".js-vertical-text");
+            gsap.fromTo(verticalItem, {
+                duration: .3,
+                yPercent: 15,
+                stagger: 0.01,
+                
+            },{
+                yPercent: -15,
+                scrollTrigger: {
+                    id: 'vertical-scroll',
+                    trigger: verticalTitle,
+                    start: "left right",
+                    end: "center left",
+                    containerAnimation: tl,
+                    scrub: true,
+                    //markers: true,
+                }
+            })
+        })
+
+
+        const opacityContainers = document.querySelectorAll('.js-opacity-animation');
+
+        opacityContainers.forEach(opacityContainer =>{
+            const opacityItem = opacityContainer.querySelectorAll('.js-opacity-item');
+            gsap.from(opacityItem, {
+                duration: 1, 
+                opacity: 0,
+                stagger: 0.05,
+                scrollTrigger: {
+                    trigger: opacityItem,
+                    start: "left right",
+                    end: "right left",
+                    containerAnimation: tl,
+                    scrub: true,
+                    //markers: true,
+                }
+            })
+        });
+
+        const popContainers = document.querySelectorAll('.js-pop-container');
+
+        popContainers.forEach(popContainer =>{
+            const popItem = popContainer.querySelectorAll('.js-pop-item');
+            gsap.from(popItem, {
+                duration: 4, 
+                scale: 0,
+                stagger: 1,
+                //rotation: 90,
+                scrollTrigger: {
+                    trigger: popContainer,
+                    start: "left+=500 right",
+                    end: "right right",
+                    containerAnimation: tl,
+                    scrub: true,
+                    //markers: true,
+                }
+            })
+        });
+
+        const inContainers = document.querySelectorAll('.js-in-container');
+
+        inContainers.forEach(inContainer =>{
+            const inItem = inContainer.querySelectorAll('.js-in-item');
+            gsap.from(inItem, {
+                duration: 4, 
+                scale: 2,
+                opacity: 0,
+                stagger: 2,
+                scrollTrigger: {
+                    trigger: inContainer,
+                    start: "left right",
+                    end: "center+=100 center",
+                    containerAnimation: tl,
+                    scrub: true,
+                    //markers: true,
+                }
+            })
+        });
+
+        
+        gsap.from("#js-cell-up", {
+            duration: 1,
+            yPercent: 50,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: "#js-customers",
+                start: "left right",
+                end: "left center",
+                containerAnimation: tl,
+                scrub: true,
+                //markers: true,
+            }
+        })
+          
+        gsap.from("#js-label-customers", {
+            duration: 1,
+            opacity: 0,
+            xPercent: -80,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: "#js-customers",
+                start: "left center",
+                end: "center center",
+                containerAnimation: tl,
+                scrub: true,
+                //markers: true,
+            }
+        })
+
         const whoaTextScroll = document.querySelectorAll('.js-whoa-text-scroll');
         whoaTextScroll.forEach(text=>{
             const myText = new SplitType(text);
@@ -197,12 +318,12 @@ sections.forEach((stop, index)=>{
                 y: 0,
                 stagger: 0.05,
                 delay: 0.2,
-                duration: .03,
+                duration: .06,
                 ease: "power2.inOut",
                 scrollTrigger: {
                     trigger: text,
                     start: "center right",
-                    end: "center center",
+                    end: "left center",
                     containerAnimation: tl,
                     scrub: true,
                     //toggleActions: 'play none none reverse',
@@ -219,8 +340,11 @@ sections.forEach((stop, index)=>{
                 containerAnimation: tl,
                 scrub: true,
                 //toggleActions: 'play none none reverse',
-                markers: true,
+                //markers: true,
         })
+
+        
+
 
         gsap.fromTo(".l-section__scroll-bg", {
             clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)"
@@ -236,6 +360,23 @@ sections.forEach((stop, index)=>{
             backgroundColor: "#dcdcdc",
             scrollTrigger: {
                 ...scrollTriggerBg.vars,
+            }
+        })
+
+
+        gsap.fromTo(".m-line__over", {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        }, 
+        {
+            clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+            scrollTrigger: {
+                trigger: ".m-line__img",
+                start: "left+=400 right",
+                end: "right center",
+                containerAnimation: tl,
+                scrub: true,
+                //toggleActions: 'play none none reverse',
+                //markers: true,
             }
         })
 } )
